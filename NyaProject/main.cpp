@@ -1,54 +1,25 @@
 #include <iostream>
 #include <Windows.h>
+#include <cstdlib>
 
 int main() {
 
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	srand(time(NULL));
 
-	double rate_usd = 0.011, rate_cny = 0.076, rate_frt = 0.037, rate_jpy = 1.55;
-	double rub = 0, usd = 0, cny = 0, frt = 0, jpy = 0; 
+	int arr[20]{};
 
-	int resset = 1;
-	do
+	for (int i = 0; i < 20; i++)
 	{
-		std::cout << "\nВвдите сколь рублей хотите конвертировать: ";
-		std::cin >> rub;
+		arr[i] = rand() % 10;
+		std::cout << arr[i] << " ";
+		if (i == 9)
+		{
+			std::cout << '\n';
+		}
+	}
 
-		std::cout << "\nВыберите валюту: "
-			<< "\n1) Доллар " << rub * rate_usd << " - " << rub * rate_usd * 0.05 << " коммисия = " << rub * rate_usd - rub * rate_usd * 0.05
-			<< "\n2) Юань " << rub * rate_cny << " - " << rub * rate_cny * 0.05 << " коммисия = " << rub * rate_cny - rub * rate_cny * 0.05
-			<< "\n3) Фарит " << rub * rate_frt << " - " << rub * rate_frt * 0.05 << " коммисия = " << rub * rate_frt - rub * rate_frt * 0.05
-			<< "\n4) Йен " << rub * rate_jpy << " - " << rub * rate_jpy * 0.05 << " коммисия = " << rub * rate_jpy - rub * rate_jpy * 0.05
-			<< "\n> ";
-		int choice = 0;
-		std::cin >> choice;
-
-		if (choice == 1)
-		{
-			usd += rub * rate_usd - rub * rate_usd * 0.05;
-		}
-		else if (choice == 2)
-		{
-			cny += rub * rate_cny - rub * rate_cny * 0.05;
-		}
-		else if (choice == 3)
-		{
-			frt += rub * rate_frt - rub * rate_frt * 0.05;
-		}
-		else if (choice == 4)
-		{
-			jpy += rub * rate_jpy - rub * rate_jpy * 0.05;
-		}
-		else
-		{
-			std::cout << "Ошибка: такого варианта ответа нет";
-		}
-		
-		std::cout << "\nХотите ещё что-то?\n1) Да\n0) Нет\n> ";
-		std::cin >> resset;
-	} while (resset == 1);
-
-	std::cout << "\n\nИтог: \n" << usd << " долларов\n" << cny << " юаней\n" << frt << " фаритов\n" << jpy << " йен\n";
+	
 
 }
