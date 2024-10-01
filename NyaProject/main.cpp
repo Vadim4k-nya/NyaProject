@@ -30,7 +30,7 @@ int main() {
 		}
 		else 
 		{
-			std::cout << "ЁЁЁ! нельз€ так!!!\n\n";
+			std::cout << "ЁЁЁ! нельз€ так!!! \n\n";
 		}
 	}
 	std::cout << "\t—чЄт: " << couner;
