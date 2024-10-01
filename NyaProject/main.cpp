@@ -12,9 +12,9 @@ int main() {
 
 	for (int i = 0; i < 20; i++)
 	{
-		arr[i] = rand() % 10;
+		arr[i] = rand() % 6 + 5;
 		std::cout << arr[i] << " ";
-		if (i == 9)
+		if (i == 10)
 		{
 			std::cout << '\n';
 		}
