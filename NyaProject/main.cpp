@@ -13,7 +13,7 @@ int main() {
 
 	for (int i = 0; i < size; i++)
 	{
-		arr1[i] = rand() % 6 + 5;
+		arr1[i] = rand() % 11;
 		std::cout << "¬вдите число от 0 до 10: ";
 		std::cin >> arr2[i];
 		if (arr2[i] >= 0 && arr2[i] <= 10) 
