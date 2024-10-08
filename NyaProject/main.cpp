@@ -2,36 +2,73 @@
 #include <Windows.h>
 #include <cstdlib>
 
+// написаь калькул€ро но вс выкслни€ в отдльных функци€х +-*/ и % от числа
+
+float Plus(float num1, float num2) 
+{
+	
+	return num1 + num2;
+}
+float Minus(float num1, float num2) 
+{
+	return num1 - num2;
+}
+float Multiply(float num1, float num2) 
+{
+	return num1 * num2;
+}
+float Divide(float num1, float num2) 
+{
+	return num1 / num2;
+}
+float Percentage(float num1, float num2) 
+{
+	return num2 * num1/100;
+}
+
+
 int main() {
 
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
 
-	const int size = 10;
-	int arr1[size]{}, arr2[size]{}, couner = 0;
+	float num1 = 0, num2 = 0, result = 0;
+	char action = 0;
 
-	for (int i = 0; i < size; i++)
+	std::cout << "¬ведите выражние: ";
+	std::cin >> num1;
+	std::cin >> action; 
+	std::cin >> num2;
+	
+	if (action == '+')
 	{
-		arr1[i] = rand() % 11;
-		std::cout << "¬вдите число от 0 до 10: ";
-		std::cin >> arr2[i];
-		if (arr2[i] >= 0 && arr2[i] <= 10) 
-		{
-			if (arr1[i] == arr2[i])
-			{
-				std::cout << "”дачка:)\n";
-				couner++;
-			} 
-			else 
-			{
-				std::cout << "Ќе удачка:(\n";
-			}
-		}
-		else 
-		{
-			std::cout << "ЁЁЁ! нельз€ так!!! \n\n";
-		}
+		result = Plus(num1, num2);
 	}
-	std::cout << "\t—чЄт: " << couner;
+	else if (action == '-')
+	{
+		result = Minus(num1, num2);
+	}
+	else if (action == '*')
+	{
+		result = Multiply(num1, num2);
+	}
+	else if (action == '/' && num2 != 0)
+	{
+		result = Divide(num1, num2);
+	}
+	else if (action == '%')
+	{
+		result = Percentage(num1, num2);
+	}
+	else
+	{
+		std::cout << "ќшбк";
+		return 0;
+	}
+
+	std::cout << "= " << result;
+
+	return 0;
+
 }
